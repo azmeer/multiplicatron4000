@@ -2,10 +2,6 @@ const multiply = require ('./multiplier.js');
 
 class ViewManager {
 
-  constructor() {
-    this.numberOfInputs = 2;
-  }
-  
   connectEventHandlers() {
     document.getElementById('form-numbers')
       .addEventListener(
@@ -46,7 +42,6 @@ class ViewManager {
 
   createNewInput(){
     const newInput = document.createElement('input');
-    newInput.setAttribute('id',`input-num${this.numberOfInputs}`);
     newInput.setAttribute('type','text');
     newInput.setAttribute('autocomplete','off');
     return newInput;
