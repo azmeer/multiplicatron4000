@@ -23,16 +23,16 @@ class ViewManager {
     let numbers = Array.from(document.getElementsByTagName("input"))
 	.map(number => parseInt(number.value, 10));
 
+    console.log(JSON.stringify(numbers));
+    
     let product = numbers.reduce(function(product, number, index) {
       // This is to ensure NaN is returned only if nothing is in either
       // of the first two inputs as per spec
-      return (( index > 1 ) && !number ) ? product :
+      return (( index > 1 ) && isNaN(number)) ? product :
 	multiply(product, number);
-    });
+    }, 1);
 
-    if (typeof(product) === "number") {
-      this.renderProduct(product);
-    }
+    this.renderProduct(product);
   }
 
   onClick(event) {
