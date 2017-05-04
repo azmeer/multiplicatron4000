@@ -38,8 +38,6 @@ class ViewManager {
   onClick(event) {
     const tree = document.createDocumentFragment();
     const newDiv = this.createNewDiv();
-    const lastInput = document
-	  .getElementById(`div-input-num${this.numberOfInputs - 1}`);
     const form = document.getElementById("form-numbers");
     const bar = document.getElementById("bar");
 
