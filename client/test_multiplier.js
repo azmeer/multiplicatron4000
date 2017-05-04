@@ -1,4 +1,4 @@
- add = require ("./adder.js");
+const multiply = require ("./multiplier.js");
 
  class TestSuite {
 
@@ -18,16 +18,24 @@
     return a === b;
   }
 
-  testAddPositiveNumbers() {
-    return this.assertEquals(add(5,7), 12);
+  testMultiplyByZero() {
+    return this.assertEquals(multiply(5,0), 0);
   }
 
-  testAddNegativeNumbers() {
-    return this.assertEquals(add(-5, -7), -12);
+  testMultiplyByOne() {
+    return this.assertEquals(multiply(5,1), 5);
+  }
+   
+   testMultiplyPositiveNumbers() {
+    return this.assertEquals(multiply(5,7), 35);
   }
 
-  testAddPositiveAndNegativeNumbers() {
-   return this.assertEquals(add(5, -7), -2);
+  testMultiplyNegativeNumbers() {
+    return this.assertEquals(multiply(-5, -7), 35);
+  }
+
+  testMultiplyPositiveAndNegativeNumbers() {
+   return this.assertEquals(multiply(5, -7), -35);
  }
 }
 
