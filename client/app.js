@@ -36,17 +36,27 @@ class ViewManager {
 
   onClick(event) {
     const tree = document.createDocumentFragment();
-    const newDiv = document.createElement("div");
-    const newInput = document.createElement("input");
+    const newDiv = this.createNewDiv();
+    const lastInput = document
+	  .getElementById(`div-input-num${this.numberOfInputs - 1}`);
 
-    newDiv.setAttribute("id", `div-input-num${++this.numberOfInputs}`);
+    newDiv.appendChild(this.createNewInput());
+    tree.appendChild(newDiv);
+    lastInput.appendChild(tree);
+  }
+
+  createNewInput(){
+    const newInput = document.createElement("input");
     newInput.setAttribute("id",`input-num${this.numberOfInputs}`);
     newInput.setAttribute("type","text");
     newInput.setAttribute("autocomplete","off");
-    newDiv.appendChild(newInput);
-    tree.appendChild(newDiv);
-    document.getElementById(`div-input-num${this.numberOfInputs - 1}`)
-      .appendChild(tree);
+    return newInput;
+  }
+  
+  createNewDiv(){
+    const newDiv = document.createElement("div");
+    newDiv.setAttribute("id", `div-input-num${++this.numberOfInputs}`);
+    return newDiv;
   }
   
   renderProduct(product) {
