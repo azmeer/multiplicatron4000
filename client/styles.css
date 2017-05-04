@@ -14,7 +14,12 @@
   text-align: center;
 }
 
-#form-numbers button {
+#factorButton {
+  width: 100%;
+  text-align: center;
+}
+
+.button {
   font-size: 24px;
   margin-top: 50px;
 }
