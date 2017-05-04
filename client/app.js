@@ -40,10 +40,12 @@ class ViewManager {
     const newDiv = this.createNewDiv();
     const lastInput = document
 	  .getElementById(`div-input-num${this.numberOfInputs - 1}`);
+    const form = document.getElementById("form-numbers");
+    const bar = document.getElementById("bar");
 
     newDiv.appendChild(this.createNewInput());
     tree.appendChild(newDiv);
-    lastInput.appendChild(tree);
+    form.insertBefore(tree, bar);
     this.reloadCSS();
   }
 
