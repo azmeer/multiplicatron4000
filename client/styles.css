@@ -1,0 +1,25 @@
+#form-numbers {
+  width: 200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#form-numbers > div {
+  padding: 10px 20px;
+}
+
+#form-numbers hr, input[type=text] {
+  width: 80px;
+  font-size: 36px;
+  text-align: center;
+}
+
+#form-numbers button {
+  font-size: 24px;
+  margin-top: 50px;
+}
+
+.sum {
+  font-size: 48px;
+  font-weight: bold;
+}
