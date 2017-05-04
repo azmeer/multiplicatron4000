@@ -1,4 +1,4 @@
-const add = require ("./adder.js");
+const multiply = require ("./multiplier.js");
 
 class ViewManager {
 
@@ -19,14 +19,14 @@ class ViewManager {
     num1 = parseInt(num1,10);
     num2 = parseInt(num2,10);
 
-    const sum = add(num1, num2);
+    const product = multiply(num1, num2);
 
-    this.renderSum(sum);
+    this.renderProduct(product);
 
   }
 
-  renderSum(sum) {
-    document.querySelector(".sum").textContent = sum;
+  renderProduct(product) {
+    document.querySelector(".sum").textContent = product;
   }
 }
 
