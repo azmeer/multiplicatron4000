@@ -20,18 +20,19 @@ class ViewManager {
   onSubmit(event) {
     event.preventDefault();
     
-    let num1 = document.getElementById(
-      "input-num1").value;
-    let num2 = document.getElementById(
-      "input-num2").value;
-    
-    num1 = parseInt(num1,10);
-    num2 = parseInt(num2,10);
+    let numbers = Array.from(document.getElementsByTagName("input"))
+	.map(number => parseInt(number.value, 10));
 
-    const product = multiply(num1, num2);
+    let product = numbers.reduce(function(product, number, index) {
+      // This is to ensure NaN is returned only if nothing is in either
+      // of the first two inputs as per spec
+      return (( index > 1 ) && !number ) ? product :
+	multiply(product, number);
+    });
 
-    this.renderProduct(product);
-
+    if (typeof(product) === "number") {
+      this.renderProduct(product);
+    }
   }
 
   onClick(event) {
