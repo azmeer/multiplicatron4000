@@ -43,8 +43,16 @@ class ViewManager {
     newDiv.appendChild(this.createNewInput());
     tree.appendChild(newDiv);
     lastInput.appendChild(tree);
+    this.reloadCSS();
   }
 
+  reloadCSS() {
+    const links = document.getElementsByTagName("link");
+    for (let i = 0; i < links.length; i++) {
+      if (links[i].rel === "stylesheet") links[i].href += "";
+    }
+  }
+  
   createNewInput(){
     const newInput = document.createElement("input");
     newInput.setAttribute("id",`input-num${this.numberOfInputs}`);
