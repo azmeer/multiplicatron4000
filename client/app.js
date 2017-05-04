@@ -26,7 +26,7 @@ class ViewManager {
   }
 
   renderProduct(product) {
-    document.querySelector(".sum").textContent = product;
+    document.querySelector(".product").textContent = product;
   }
 }
 
